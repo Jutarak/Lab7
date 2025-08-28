@@ -1,10 +1,24 @@
 package com.example.lab33;
 
-public class User {
-    String Name;
-    int ID;
+public abstract class User {
+    public String Name;
+    public int ID;
 
-    void Take_Notes(){
+    //getter
+    public String getName() {
+        return Name;
+    }
+    public int getID() {
+        return ID;
+    }
+    public void setName(String newName) {
+        this.Name = newName;
+    }
+    public void setID(int newID) {
+        this.ID = newID;
+    }
+    //M
+    abstract public String getSummary();
+    //usera.Take_Notes();
     }
 
-}
