@@ -2,19 +2,19 @@ package com.example.lab33;
 
 public abstract class User {
     public String Name;
-    public int ID;
+    public String ID;
 
     //getter
     public String getName() {
         return Name;
     }
-    public int getID() {
+    public String getID() {
         return ID;
     }
     public void setName(String newName) {
         this.Name = newName;
     }
-    public void setID(int newID) {
+    public void setID(String newID) {
         this.ID = newID;
     }
     //M
