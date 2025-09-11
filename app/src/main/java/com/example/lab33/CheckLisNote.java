@@ -5,6 +5,17 @@ import java.util.List;
 public class CheckLisNote extends Note{
     private List<String> items ;
 
+    public CheckLisNote(String title, String createdDate, List<String> items) {
+        this.title = title;
+        this.createdDate = createdDate;
+        this.items = items;
+    }
+
+    public CheckLisNote() {
+
+    }
+
+
     //getter
     public List<String> getItems() {
         return items;

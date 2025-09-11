@@ -1,6 +1,7 @@
 package com.example.lab33;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -15,6 +16,8 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import java.util.Date;
+import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
 
 public class AddNoteActivity extends AppCompatActivity {
 
@@ -82,6 +85,15 @@ public class AddNoteActivity extends AppCompatActivity {
                 //show note on TextView
                 display.setText(note1.getSummary());
                 display2.setText(user1.getSummary());
+
+                //OOP--> entity
+                NoteEntity entity = NoteMapper.toEntity(note1);
+
+                //add data to db
+                Context context = view.getContext();
+                Executors.newSingleThreadExecutor().execute(() ->{
+                    AppDatabase.getInstance(context).noteDao().insert(entity);
+                });
             }
 
         });

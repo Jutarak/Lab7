@@ -19,10 +19,11 @@ import org.w3c.dom.Text;
 
 public class BrowseNoteActivity extends AppCompatActivity {
 
-    Button addsearch;
+    Button addsearch,back2;
     ProgressBar progressBar2;
     TextView display2;
     EditText editTextText5;
+
 
 
     @SuppressLint("MissingInflatedId")
@@ -36,6 +37,16 @@ public class BrowseNoteActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+        back2 = findViewById(R.id.button4);
+        back2.setOnClickListener(new View.OnClickListener() {//event listener
+            @Override
+            public void onClick(View view) {
+                System.out.println("Click!!");
+                Intent addBack = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(addBack);
+            }
+        });
+
         editTextText5 = findViewById(R.id.editTextText5);
         display2 = findViewById(R.id.display2);
         progressBar2 = findViewById(R.id.progressBar2);
